@@ -68,9 +68,16 @@ After you have created a bootable Installer, copy the EFI folder to the EFI part
 
 ## Generating your own serial and Editing ROM
 
-Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for MacPro7,1.
+Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for one of the following SMBIOS:
 
-use PlistEdit Pro or any decent plist editor to manually enter the details in the following sections of the config (as shown in the video): (SystemProductName, SystemSerialNumber, MLB, and UUID)
+| SMBIOS | Usage | Notes |
+| -------- | --------- | --------- |
+| MacPro7,1 | AMD Polaris and newer | MacPro7,1 is exclusive to macOS 10.15 Catalina and newer |
+iMacPro1,1 | NVIDIA Kepler / Maxwell / Pascal or AMD Polaris and newer | Use if you need High Sierra or Mojave, otherwise use MacPro7,1 |
+iMac14,2: | NVIDIA Maxwell and Pascal | Use if you get black screens on iMacPro1,1 using an NVIDIA Kepler GPU or after installing Web Drivers |
+MacPro6,1 | AMD GCN GPUs (supported HD 7000/8000 + R5/R7/R9 series) |
+
+use Xcode, ProperTree or any decent plist editor to manually enter the details in the following sections of the config (as shown in the video): (SystemProductName, SystemSerialNumber, MLB, and UUID)
 
 https://user-images.githubusercontent.com/59102649/116117179-3ea51200-a6bc-11eb-8a18-a03f7bb5bf1d.mp4
 
