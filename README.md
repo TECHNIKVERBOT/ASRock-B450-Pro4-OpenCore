@@ -1,19 +1,18 @@
 # ASRock-B450-Pro4-OpenCore
  
-### Before you give this EFI a try, make sure you read [this](#set-cpu-core-count), [this](#generating-your-own-serial-and-editing-rom) and [this](#enabling-uefi-secure-boot-windows-11)!
+### Before you give this EFI a try, make sure you read [this](#set-cpu-core-count) and [this](#generating-your-own-serial-and-editing-rom)!
 
 This repo includes an OpenCore EFI for the ASRock B450 Pro4 motherboard.
 
 Testing on:
 
-Model | MSI B550M Mortar
+Model | ASRock B450 Pro4
 ------------- | ---------------
-CPU | AMD Ryzen 5 3600
-GPU | AMD Radeon RX Vega 56
-RAM | 16 GB DDR4-3200 (Corsair Vengance RGB)
-Disk (NVMe) | WD Black SN750 (Windows 11)
-Disk (SATA) | Crucial BX500 (macOS)
-Disk (Data) | Samsung 860 QVO
+CPU | AMD Ryzen 7 3700X
+GPU | AMD Radeon RX 6600 XT
+RAM | 16 GB DDR4-3200 (G-Skill Aegis)
+Disk (SATA) | Intenso High Performance (Windows 11)
+Disk (SATA) | Intenso High Performance (macOS)
 macOS | Ventura Beta 5
 
 ## What works?
@@ -28,6 +27,7 @@ macOS | Ventura Beta 5
 
 ## What doesn't work?
 
+- back audio output
 - microphone output
 
 ## Set CPU core count
@@ -68,14 +68,7 @@ After you have created a bootable Installer, copy the EFI folder to the EFI part
 
 ## Generating your own serial and Editing ROM
 
-Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for one of the following SMBIOS:
-
-| SMBIOS | Usage | Notes |
-| -------- | --------- | --------- |
-| MacPro7,1 | AMD Polaris and newer | MacPro7,1 is exclusive to macOS 10.15 Catalina and newer |
-iMacPro1,1 | NVIDIA Kepler / Maxwell / Pascal or AMD Polaris and newer | Use if you need High Sierra or Mojave, otherwise use MacPro7,1 |
-iMac14,2: | NVIDIA Maxwell and Pascal | Use if you get black screens on iMacPro1,1 using an NVIDIA Kepler GPU or after installing Web Drivers |
-MacPro6,1 | AMD GCN GPUs (supported HD 7000/8000 + R5/R7/R9 series) |
+Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for MacPro7,1.
 
 use PlistEdit Pro or any decent plist editor to manually enter the details in the following sections of the config (as shown in the video): (SystemProductName, SystemSerialNumber, MLB, and UUID)
 
