@@ -84,7 +84,7 @@ Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for o
 | -------- | --------- | --------- |
 | MacPro7,1 | AMD Polaris and newer | MacPro7,1 is exclusive to macOS 10.15 Catalina and newer |
 iMacPro1,1 | NVIDIA Kepler / Maxwell / Pascal or AMD Polaris and newer | Use if you need High Sierra or Mojave, otherwise use MacPro7,1 |
-iMac14,2: | NVIDIA Maxwell and Pascal | Use if you get black screens on iMacPro1,1 using an NVIDIA Kepler GPU or after installing Web Drivers |
+iMac14,2: | NVIDIA Kepler / Maxwell / Pascal | Use if you get black screens on iMacPro1,1 using an NVIDIA Kepler GPU or after installing Web Drivers |
 MacPro6,1 | AMD GCN GPUs (supported HD 7000/8000 + R5/R7/R9 series) |
 
 use Xcode, ProperTree or any decent plist editor to manually enter the details in the following sections of the config (as shown in the video): (SystemProductName, SystemSerialNumber, MLB, and UUID)
