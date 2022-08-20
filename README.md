@@ -1,6 +1,6 @@
 # ASRock-B450-Pro4-OpenCore
  
-### Before you give this EFI a try, make sure you read [this](#set-cpu-core-count) and [this](#generating-your-own-serial-and-editing-rom)!
+### Before you give this EFI a try, make sure you read [this](#set-cpu-core-count), [this](#boot-arguments-for-different-configurations) and [this](#generating-your-own-serial-and-editing-rom)!
 
 This repo includes an OpenCore EFI for the ASRock B450 Pro4 motherboard.
 
@@ -9,8 +9,8 @@ Testing on:
 Model | ASRock B450 Pro4
 ------------- | ---------------
 CPU | AMD Ryzen 7 3700X
-GPU | AMD Radeon RX 6600 XT
-RAM | 16 GB DDR4-3200 (G-Skill Aegis)
+GPU | AMD Radeon RX 6600
+RAM | 16 GB DDR4-3000 (G-Skill Aegis)
 Disk (SATA) | Intenso High Performance (Windows 11)
 Disk (SATA) | Intenso High Performance (macOS)
 macOS | Ventura Beta 5
@@ -65,6 +65,16 @@ There are two ways you can make a USB installer:
 2. If you are using Windows, use [macrecovery.py](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html) from the offical OpenCore release package.
 
 After you have created a bootable Installer, copy the EFI folder to the EFI partition of the installer drive and install as usual (GUID Partiton Map; APFS). After the installation, mount the EFI partition of the installed OS and copy the EFI folder to its partition.
+
+## Boot arguments for different configurations
+
+If you're using an AMD Navi GPU, you won't need to change anything in the `boot-args`
+
+For AMD Polaris and NVIDIA Kepler, remove `agdpmod=pikera` from `boot-args`
+
+For NVIDIA Maxwell and Pascal, remove `agdpmod=pikera` and add `nvda_drv_vrl=1` for enabling web drivers.
+
+For AMD GCN, remove `agdpmod=pikera` and add `radpg=15` and `-raddvi`.
 
 ## Generating your own serial and Editing ROM
 
