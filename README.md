@@ -29,6 +29,7 @@ macOS | Ventura Beta 5
 
 - back audio output
 - microphone output
+- intermittent crashes during boot
 
 ## Set CPU core count
 
